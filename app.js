@@ -14,7 +14,7 @@ var helmet  = require('helmet');
 var app = express();
 
 var mongoose = require('mongoose');
-var mongoDB = '';
+var mongoDB = process.env.MONGODB_URI || 'mongodb://uid:pwd@ds123.mlab.com:port/locallibrary';
 
 mongoose.connect(mongoDB);
 mongoose.Promise = global.Promise;
